@@ -1,17 +1,38 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 #include "bits.h"
 
 
 
-void printBites(int nOfBytes, void *bytes)
+char * printBits(int nOfBytes, void *bytes)
 {
+	int strSize = nOfBytes * 9;
 	structByte *arrayBytes = (structByte *)bytes;
 
+	char oneByte[10];
+	char *strBits;
+
+
+	if ((strBits = (char *)malloc(strSize)) == NULL) {
+		fprintf(stderr, "Error: malloc\n");
+		return NULL;
+	}
+
+	/*
+	 * Initialize the string.
+	 */
+	strcpy(strBits, "");
+
+
+	/*
+	 * Reads and writes the data.
+	 */
 	#ifdef __BIG_ENDIAN_
 	for (int i = 0; i < nOfBytes; i++)
 	{
-		printf("%hhu%hhu%hhu%hhu%hhu%hhu%hhu%hhu ",
+		sprintf(oneByte, "%hhu%hhu%hhu%hhu%hhu%hhu%hhu%hhu ",
 			   arrayBytes[i].b1,
 			   arrayBytes[i].b2,
 			   arrayBytes[i].b3,
@@ -20,11 +41,12 @@ void printBites(int nOfBytes, void *bytes)
 			   arrayBytes[i].b6,
 			   arrayBytes[i].b7,
 			   arrayBytes[i].b8);
+		strcat(strBits, oneByte);
 	}
 	#else
-	for (int i = (nOfBytes - 1); i >= 0; i--)
+	for (int i = (nOfBytes -1); i >= 0; i--)
 	{
-		printf("%hhu%hhu%hhu%hhu%hhu%hhu%hhu%hhu ",
+		sprintf(oneByte, "%hhu%hhu%hhu%hhu%hhu%hhu%hhu%hhu ",
 			   arrayBytes[i].b8,
 			   arrayBytes[i].b7,
 			   arrayBytes[i].b6,
@@ -33,8 +55,16 @@ void printBites(int nOfBytes, void *bytes)
 			   arrayBytes[i].b3,
 			   arrayBytes[i].b2,
 			   arrayBytes[i].b1);
+		strcat(strBits, oneByte);
 	}
 	#endif
 
-	printf("%c", 8);  // Removes the last space.
+
+	/*
+	 * Removes the last space character and finish the string.
+	 */
+	strBits[strSize - 1] = '\0';
+
+
+	return strBits;
 }

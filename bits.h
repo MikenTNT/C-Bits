@@ -7,7 +7,7 @@
 
 
 /**
- * This is the struct used to get the bytes.
+ * This is the struct used to get the bits.
  */
 typedef struct structByte
 {
@@ -23,9 +23,10 @@ typedef struct structByte
 
 
 /**
- * This function gets an object and its size and prints it as bites.
+ * This function gets an object and its size
+ * and return a string with its bits.
  */
-void printBites(int bitSetSize, void *bitSet);
+char * printBits(int bitSetSize, void *bitSet);
 
 
 #endif
