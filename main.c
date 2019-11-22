@@ -6,7 +6,9 @@
 
 
 int main(int argc, char *argv[]) {
-
+	/**
+	 * Examples.
+	 */
 	unsigned char a = '\0';
 	unsigned short b = -1;
 	unsigned int c = 54;
@@ -19,6 +21,7 @@ int main(int argc, char *argv[]) {
 	dBits = printBits(sizeof(d), &d);
 
 
+	// Print the result
 	printf("Value of a %hhu, size %ld bytes.\n", a, sizeof(a));
 	printf("Bytes: %s\n", aBits);
 	printf("Value of b %hu, size %ld bytes.\n", b, sizeof(b));
