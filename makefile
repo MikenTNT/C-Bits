@@ -6,7 +6,7 @@ SHELL = /bin/bash
 #-----------------------------------AJUSTES-------------------------------------
 
 # Compilador de C 'gcc'.
-CC = gcc-8
+CC = gcc
 # CFLAGS: depurador '-g', matematicas '-lm'.
 CFLAGS = -Wall
 # Nombre del archivo a principal.
