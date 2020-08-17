@@ -2,7 +2,7 @@
 #define __BITS_H
 
 
-// If your system is Big Endian type uncomment the line below.
+// If your system is Big Endian use the line below.
 //#define __BIG_ENDIAN_
 
 
