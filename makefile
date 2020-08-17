@@ -1,5 +1,5 @@
-# MAKEFILE DE PROYECTO C,  rev 6.3
-# Autor: MikenTNT  13-OCT-2019.
+# MAKEFILE DE PROYECTO C,  rev 6.4
+# Autor: MikenTNT  04-MAY-2020.
 
 SHELL = /bin/bash
 
@@ -50,7 +50,9 @@ run: $(MAIN)
 
 # Objetivo para limpieza.
 clean:
-	rm -rf $(OBJECTS) $(MAIN) proyecto.tar
+	rm -rf $(OBJECTS)
+	rm -rf $(MAIN)
+	rm -rf proyecto.tar
 
 # Objetivo para comprimir.
 tar: $(SOURCES) $(HEADERS) Makefile
