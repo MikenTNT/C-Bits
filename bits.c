@@ -21,7 +21,7 @@ char * printBits(int nOfBytes, void *bytes)
 	}
 
 	/*
-	 * Initialize the string.
+	 * Initializes the string.
 	 */
 	strcpy(strBits, "");
 
@@ -58,7 +58,7 @@ char * printBits(int nOfBytes, void *bytes)
 
 
 	/*
-	 * Removes the last space character and finish the string.
+	 * Removes the last space character and finishes the string.
 	 */
 	strBits[strSize - 1] = '\0';
 
