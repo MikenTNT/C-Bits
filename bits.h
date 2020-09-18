@@ -2,7 +2,7 @@
 #define __BITS_H
 
 
-// If your system is Big Endian use the line below.
+// If your system uses Big Endian uncomment the line below.
 //#define __BIG_ENDIAN_
 
 
@@ -24,7 +24,7 @@ typedef struct structByte
 
 /**
  * This function gets an object and its size
- * and return a string with its bits.
+ * and returns a string with its bits.
  */
 char * printBits(int bitSetSize, void *bitSet);
 
