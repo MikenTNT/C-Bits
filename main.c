@@ -39,7 +39,7 @@ int main(int argc, char *argv[]) {
 	printf("Bytes: %s\n", strBits);
 
 
-	// It's very important to free the string after use it.
+	// It is very important to free the strings once you are done using them.
 	free(aBits);
 	free(bBits);
 	free(cBits);
